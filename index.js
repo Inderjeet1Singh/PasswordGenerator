@@ -19,6 +19,12 @@ const GenerateButton = document.querySelector("#generate_passwordbtn");
 
 const AllCheckBox = document.querySelectorAll(".passopt input");
 
+// default values 
+IndicatorofPass.style.backgroundColor = "white";
+IndicatorofPass.style.backgroundColor = "0 8px 22px 0 rgba(157, 166, 233, 0.742), 0 4px 6px 0 rgba(122, 134, 208, 0.427);";
+
+UppercaseOption.checked = true;
+
 var symbols = "!@#$%^&*()-_=+[]{}|;:',.<>?/";
 let newpassword = "";
 let startingPassLength = 8;
@@ -65,7 +71,6 @@ function RandomSymbol(){
     let num = RandomIntegerNumbers(0,symbols.length);
     return symbols[num];
 }
-
 
 // function for strength
 
@@ -116,6 +121,9 @@ async function CopyPassword(){
     alert("You don't generate any password");
     }
 }
+
+// copybutton Event Listener
+copyButton.addEventListener('click', CopyPassword);
 
 // making value of password length same as  slide bar slides to new values
 
